@@ -27,12 +27,12 @@
 
         <RatingBar
             android:id="@+id/ratingBar"
-            style="@style/Widget.AppCompat.RatingBar.Indicator"
+            style="@android:style/Widget.Holo.Light.RatingBar.Indicator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
             android:numStars="5"
             android:progressTint="@color/purple_200"
+            android:secondaryProgressTint="@color/white"
             android:rating="4.5"
             android:scaleX="0.8"
             android:scaleY="0.8"
@@ -41,12 +41,13 @@
             app:layout_constraintTop_toBottomOf="@+id/themathic" />
 
         <TextView
+            android:layout_marginEnd="20dp"
             android:id="@+id/num_reviews"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
-            android:layout_marginStart="10dp"
             android:gravity="center"
             android:text="@string/num_reviews"
+            android:textColor="@color/purple_200"
             android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/themathic" />
@@ -145,7 +146,7 @@
         <Button
             android:id="@+id/button3"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="70dp"
             android:layout_marginStart="30dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="30dp"
@@ -165,6 +166,7 @@
             android:layout_marginStart="25dp"
             android:fontFamily="@font/quicksandmedium"
             android:text="@string/include"
+            android:textColor="@color/black"
             android:textSize="@dimen/font_size4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -174,10 +176,11 @@
             android:id="@+id/tv_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:layout_marginStart="25dp"
+            android:layout_marginTop="@dimen/space10"
             android:fontFamily="@font/quicksandregular"
             android:text="@string/content"
+            android:textColor="@color/black"
             android:textSize="@dimen/font_size1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_include" />

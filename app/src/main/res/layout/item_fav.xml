@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="10dp"
+        android:src="@drawable/sakura"
+        app:layout_constraintBottom_toTopOf="@+id/hguideline1"
+        app:layout_constraintEnd_toStartOf="@+id/vguideline1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_icon_fav"
+        android:layout_width="@dimen/icons"
+        android:layout_height="@dimen/icons"
+        android:layout_marginTop="@dimen/margin"
+        android:layout_marginEnd="@dimen/margin"
+        android:src="@drawable/ic_favourite_full"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/orange" />
+
+    <TextView
+        android:id="@+id/tv_thematic"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/quicksandbold"
+        android:text="@string/thematic"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_size2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/vguideline1"
+        app:layout_constraintTop_toBottomOf="@id/iv_icon_fav" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vguideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="170dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/hguideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="170dp" />
+
+    <RatingBar
+        android:id="@+id/ratingBar2"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:progressTint="@color/purple_200"
+        android:rating="4.5"
+        app:layout_constraintStart_toStartOf="@+id/vguideline1"
+        app:layout_constraintTop_toBottomOf="@+id/tv_thematic" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/font_size0"
+        android:layout_marginStart="5dp"
+        android:textColor="@color/purple_200"
+        android:text="@string/num_reviews"
+        app:layout_constraintStart_toEndOf="@+id/ratingBar2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_thematic" />
+
+    <TextView
+        android:id="@+id/tv_final_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/quicksandmedium"
+        android:text="@string/price_final"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_size2"
+        app:layout_constraintStart_toStartOf="@+id/vguideline1"
+        app:layout_constraintTop_toBottomOf="@+id/ratingBar2" />
+
+    <TextView
+        android:id="@+id/tv_final_price_cents"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/quicksandregular"
+        android:text="@string/price_final_cents"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_size0"
+        app:layout_constraintStart_toEndOf="@id/tv_final_price"
+        app:layout_constraintTop_toBottomOf="@+id/ratingBar2" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:backgroundTint="@color/pink"
+        android:fontFamily="@font/quicksandmedium"
+        android:text="@string/add_car"
+        android:textAllCaps="false"
+        android:textSize="@dimen/font_size1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/vguideline1"
+        app:layout_constraintTop_toBottomOf="@+id/tv_final_price" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,11 +6,13 @@
         <entry key="app/src/main/res/drawable/ic_favourite.xml" value="0.31145833333333334" />
         <entry key="app/src/main/res/drawable/ic_location.xml" value="0.3260416666666667" />
         <entry key="app/src/main/res/drawable/ic_search.xml" value="0.3260416666666667" />
+        <entry key="app/src/main/res/drawable/shape.xml" value="0.31145833333333334" />
         <entry key="app/src/main/res/font/.xml" value="0.2916666666666667" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2839506172839506" />
-        <entry key="app/src/main/res/layout/activity_main2.xml" value="0.2687717773445188" />
+        <entry key="app/src/main/res/layout/activity_main2.xml" value="0.22853377711963477" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.23697916666666666" />
         <entry key="app/src/main/res/layout/item_box.xml" value="0.5411731038974635" />
+        <entry key="app/src/main/res/layout/item_fav.xml" value="0.335" />
         <entry key="app/src/main/res/layout/item_list.xml" value="0.2953125" />
         <entry key="app/src/main/res/menu/menu_nav.xml" value="0.2953125" />
       </map>

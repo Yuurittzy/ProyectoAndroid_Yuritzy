@@ -8,20 +8,19 @@
     tools:context=".MainActivity">
 
     <androidx.appcompat.widget.Toolbar
+
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="70dp"
         android:background="@color/purple_100"
         app:title="Yuu Ritzy"
-        app:titleTextColor="@color/white"
-        >
+        app:titleTextColor="@color/white">
 
     </androidx.appcompat.widget.Toolbar>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:background="#FCEA7E"
         android:layout_height="@dimen/mini_toolbar"
-        >
+        android:background="#FCEA7E">
 
         <ImageView
             android:id="@+id/ic_location"
@@ -35,102 +34,104 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="@dimen/icons"
-            android:text="@string/address"
             android:fontFamily="@font/quicksandregular"
+            android:text="@string/address"
+            android:textColor="@color/black"
             android:textSize="@dimen/font_size1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/ic_location"
-            app:layout_constraintTop_toTopOf="parent"
-            android:textColor="@color/black"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
         android:id="@+id/iv_perfect_gift"
         android:layout_width="match_parent"
-        android:layout_height="220dp"
+        android:layout_height="255dp"
         app:srcCompat="@drawable/perfect_gift_copy" />
 
     <TextView
-        android:text="@string/perfect_gift"
-        android:fontFamily="@font/quicksandsemibold"
-        android:textSize="@dimen/font_size5"
-        android:textColor="@color/black"
-        android:textAlignment="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        />
+        android:fontFamily="@font/quicksandsemibold"
+        android:text="@string/perfect_gift"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_size5" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/surprise_box"
-        android:fontFamily="@font/quicksandmedium"
-        android:textSize="@dimen/font_size4"
         android:layout_marginStart="@dimen/icons"
         android:layout_marginTop="@dimen/icons"
-        android:textColor="@color/black"/>
+        android:fontFamily="@font/quicksandmedium"
+        android:text="@string/surprise_box"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_size4" />
 
-<HorizontalScrollView
-    android:id="@+id/scroll"
-    android:layout_marginTop="@dimen/icons"
-    android:layout_width="match_parent"
-    android:layout_height="200dp">
+    <HorizontalScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="@dimen/icons">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:padding="16dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="@dimen/space10">
 
+            <include
+                android:id="@+id/block2"
+                layout="@layout/item_box"
+                android:layout_width="115dp"
+                android:layout_height="155dp"
+                android:background="@color/orange"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/block2"
-            android:layout_width="115dp"
-            android:layout_height="155dp"
-            android:layout_marginStart="16dp"
-            android:background="@color/orange"
-            android:onClick="Click"
-            app:layout_constraintBottom_toBottomOf="@+id/piece1"
-            app:layout_constraintStart_toEndOf="@+id/piece1"
-            app:layout_constraintTop_toTopOf="parent" />
+            <include
+                android:id="@+id/block3"
+                layout="@layout/item_box"
+                android:layout_width="115dp"
+                android:layout_height="155dp"
+                android:layout_marginStart="@dimen/space10"
+                android:background="@color/orange"
+                app:layout_constraintStart_toEndOf="@+id/block2"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/block3"
-            android:layout_width="115dp"
-            android:layout_height="155dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:background="@color/orange"
-            app:layout_constraintBottom_toBottomOf="@+id/piece1"
-            app:layout_constraintStart_toEndOf="@+id/block2"
-            app:layout_constraintTop_toTopOf="parent" />
-        <TextView
-            android:id="@+id/block4"
-            android:layout_width="115dp"
-            android:layout_height="155dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:background="@color/orange"
-            app:layout_constraintBottom_toBottomOf="@+id/piece1"
-            app:layout_constraintStart_toEndOf="@+id/block3"
-            app:layout_constraintTop_toTopOf="parent" />
+            <include
+                android:id="@+id/block4"
+                layout="@layout/item_box"
+                android:layout_width="115dp"
+                android:layout_height="155dp"
+                android:layout_marginStart="@dimen/space10"
+                android:layout_marginLeft="@dimen/space10"
+                android:background="@color/orange"
+                app:layout_constraintStart_toEndOf="@+id/block3"
+                app:layout_constraintTop_toTopOf="parent" />
 
+            <include
+                android:id="@+id/block5"
+                layout="@layout/item_box"
+                android:layout_width="115dp"
+                android:layout_height="155dp"
+                android:layout_marginStart="@dimen/space10"
+                android:layout_marginLeft="@dimen/space10"
+                android:background="@color/orange"
+                app:layout_constraintStart_toEndOf="@+id/block4"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</HorizontalScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </HorizontalScrollView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/btn_nav_view"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_gravity="bottom"
-        android:background="@color/purple_100"
-        app:itemBackground="@color/purple_100"
-        app:itemIconTint="@color/white"
-        app:itemTextColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/yellow_200"
+        app:itemIconTint="@color/purple_100"
+        app:itemTextColor="@color/purple_100"
         app:menu="@menu/menu_nav" />
 
 

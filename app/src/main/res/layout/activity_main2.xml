@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".MainActivity2">
+
+        <TextView
+            android:id="@+id/themathic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:fontFamily="@font/quicksandbold"
+            android:text="@string/thematic"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_size5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            style="@style/Widget.AppCompat.RatingBar.Indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:numStars="5"
+            android:progressTint="@color/purple_200"
+            android:rating="4.5"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            android:stepSize="0.5"
+            app:layout_constraintEnd_toStartOf="@+id/num_reviews"
+            app:layout_constraintTop_toBottomOf="@+id/themathic" />
+
+        <TextView
+            android:id="@+id/num_reviews"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginStart="10dp"
+            android:gravity="center"
+            android:text="@string/num_reviews"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/themathic" />
+
+        <ImageView
+            android:id="@+id/iv_preview"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:src="@drawable/preview_sakura"
+            app:layout_constraintTop_toBottomOf="@id/ratingBar" />
+
+        <TextView
+            android:id="@+id/tv_initial_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/quicksandregular"
+            android:text="@string/price_initial"
+            android:textSize="@dimen/font_size3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_preview" />
+
+        <TextView
+            android:id="@+id/tv_final_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:fontFamily="@font/quicksandmedium"
+            android:text="@string/price_final"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_size6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_initial_price" />
+
+        <TextView
+            android:id="@+id/tv_final_price_cents"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/quicksandregular"
+            android:text="@string/price_final_cents"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_size3"
+            app:layout_constraintStart_toEndOf="@id/tv_final_price"
+            app:layout_constraintTop_toBottomOf="@id/tv_initial_price" />
+
+        <TextView
+            android:id="@+id/tv_discount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/quicksandregular"
+            android:text="@string/discount"
+            android:textColor="@color/purple_100"
+            android:textSize="@dimen/font_size3"
+            app:layout_constraintBottom_toBottomOf="@id/tv_final_price"
+            app:layout_constraintStart_toEndOf="@id/tv_final_price_cents"
+            app:layout_constraintTop_toBottomOf="@id/tv_initial_price" />
+
+        <ImageView
+            android:id="@+id/iv_favourite"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/ic_favourite_full"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_final_price"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_initial_price"
+            app:tint="@color/orange" />
+
+        <TextView
+            android:id="@+id/tv_shipping_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/quicksandbold"
+            android:text="@string/shipping_time"
+            android:textColor="@color/aqua"
+            android:textSize="@dimen/font_size2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_shopping_cart"
+            app:layout_constraintTop_toBottomOf="@id/tv_final_price" />
+
+        <ImageView
+            android:id="@+id/iv_shopping_cart"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_shopping_cart"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_final_price"
+            app:tint="@color/aqua" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="30dp"
+            android:backgroundTint="@color/pink"
+            android:fontFamily="@font/quicksandmedium"
+            android:text="@string/add_car"
+            android:textAllCaps="false"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_shipping_time" />
+
+        <TextView
+            android:id="@+id/tv_include"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:fontFamily="@font/quicksandmedium"
+            android:text="@string/include"
+            android:textSize="@dimen/font_size4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button3" />
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="25dp"
+            android:fontFamily="@font/quicksandregular"
+            android:text="@string/content"
+            android:textSize="@dimen/font_size1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_include" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

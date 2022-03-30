@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/purple_100"
+        app:title="Yuu Ritzy"
+        app:titleTextColor="@color/white"
+        >
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="#FCEA7E"
+        android:layout_height="@dimen/mini_toolbar"
+        >
+
+        <ImageView
+            android:id="@+id/ic_location"
+            android:layout_width="@dimen/icons"
+            android:layout_height="@dimen/icons"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_location" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/icons"
+            android:text="@string/address"
+            android:fontFamily="@font/quicksandregular"
+            android:textSize="@dimen/font_size1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ic_location"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textColor="@color/black"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/iv_perfect_gift"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        app:srcCompat="@drawable/perfect_gift_copy" />
+
+    <TextView
+        android:text="@string/perfect_gift"
+        android:fontFamily="@font/quicksandsemibold"
+        android:textSize="@dimen/font_size5"
+        android:textColor="@color/black"
+        android:textAlignment="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/surprise_box"
+        android:fontFamily="@font/quicksandmedium"
+        android:textSize="@dimen/font_size4"
+        android:layout_marginStart="@dimen/icons"
+        android:layout_marginTop="@dimen/icons"
+        android:textColor="@color/black"/>
+
+<HorizontalScrollView
+    android:id="@+id/scroll"
+    android:layout_marginTop="@dimen/icons"
+    android:layout_width="match_parent"
+    android:layout_height="200dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+
+        <TextView
+            android:id="@+id/block2"
+            android:layout_width="115dp"
+            android:layout_height="155dp"
+            android:layout_marginStart="16dp"
+            android:background="@color/orange"
+            android:onClick="Click"
+            app:layout_constraintBottom_toBottomOf="@+id/piece1"
+            app:layout_constraintStart_toEndOf="@+id/piece1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/block3"
+            android:layout_width="115dp"
+            android:layout_height="155dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:background="@color/orange"
+            app:layout_constraintBottom_toBottomOf="@+id/piece1"
+            app:layout_constraintStart_toEndOf="@+id/block2"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/block4"
+            android:layout_width="115dp"
+            android:layout_height="155dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:background="@color/orange"
+            app:layout_constraintBottom_toBottomOf="@+id/piece1"
+            app:layout_constraintStart_toEndOf="@+id/block3"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</HorizontalScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/btn_nav_view"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_gravity="bottom"
+        android:background="@color/purple_100"
+        app:itemBackground="@color/purple_100"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menu_nav" />
+
+
+</LinearLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+        <dimen name="font_size1">15sp</dimen>
+        <dimen name="font_size2">16sp</dimen>
+        <dimen name="font_size3">20sp</dimen>
+        <dimen name="font_size4">24sp</dimen>
+        <dimen name="font_size5">28sp</dimen>
+        <dimen name="font_size6">40sp</dimen>
+        <dimen name="iv_splash">200dp</dimen>
+        <dimen name="mini_toolbar">40dp</dimen>
+        <dimen name="icons">27dp</dimen>
+</resources>

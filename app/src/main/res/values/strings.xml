@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name">ProyectoAndroid_Yuritzy</string>
+    <string name="yuu_ritzy">Yuu Ritzy</string>
+    <string name="address">Compras desde _ CP _</string>
+    <string name="perfect_gift">El regalo perfecto</string>
+    <string name="surprise_box">Caja sorpresa</string>
+    <string name="naruto">Naruto</string>
+    <string name="sakura">Sakura</string>
+    <string name="itachi">Itachi</string>
+    <string name="sasuke">Sasuke</string>
+    <string name="minato">Minato</string>
+    <string name="kakashi">Kakashi</string>
+    <string name="buy">Comprar</string>
+    <string name="favourites">Favoritos</string>
+    <string name="my_account">Mi cuenta</string>
+    <string name="shopping_cart">Carrito</string>
+    <string name="thematic">Caja sorpresa con \n temática de _</string>
+    <string name="num_reviews">(120)</string>
+    <string name="price_initial"><s>$1100</s></string>
+    <string name="price_final">$990</string>
+    <string name="price_final_cents">.00</string>
+    <string name="discount">%10 OFF</string>
+    <string name="shipping_time">LLega en 9 días hábiles por $50</string>
+    <string name="add_car">Agregar al carrito</string>
+    <string name="greeting">Hola, ______!</string>
+    <string name="my_addresses">Mis direcciones</string>
+    <string name="my_comments">Mis comentarios</string>
+    <string name="my_shopping">Mis compras</string>
+    <string name="coupons">Cupones</string>
+    <string name="edit_profile">Editar mi  perfil</string>
+    <string name="sending">Enviado</string>
+    <string name="assistance">Ayuda</string>
+    <string name="adress_shipping">Envio a CP ____</string>
+    <string name="include">Incluye</string>
+    <string name="all">Todo</string>
+    <string name="data_shipping">Datos de envío </string>
+    <string name="edit_change">Editar o elegir otro</string>
+    <string name="payment_method">Método de pago</string>
+    <string name="debit_card">Tarjeta de débido </string>
+    <string name="credit_card">Tarjeta de crédito</string>
+    <string name="transfer">Transferencia electrónica </string>
+    <string name="cash">Deposito en efectivo</string>
+    <string name="content">
+        <li>Funko Pop de ___</li>\n
+        <li>Kunai y Shuriken</li>\n
+        <li>Libro de kakashi</li>\n
+        <li>Monedero de rana</li>\n
+        <li>Cascabeles</li>\n
+        <li>Dulce en forma de sharingan</li>\n
+        <li>Chocolates de banda y papel bomba</li>\n
+        <li>Un bowl de ramen</li>\n
+        <li>Pergamino del cielo</li>\n
+        <li>Banda Ninja </li>\n
+        <li>Stickers </li>\n
+        <li>3 bolsas de fritura </li>\n
+        <li>Palillos</li>\n
+    </string>
+
+
+</resources>

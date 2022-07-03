@@ -2,6 +2,7 @@ package com.example.proyectoandroid_yuritzy.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.proyectoandroid_yuritzy.R
 import com.example.proyectoandroid_yuritzy.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -17,7 +18,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setUpRecyclerView() {
-        val items = listOf(Product("Naruto", ""), Product("Sasuke", ""), Product("Sakura", ""))
+        val items = listOf(Product("Naruto", R.drawable.naruto), Product("Sasuke", R.drawable.sasuke), Product("Sakura", R.drawable.sakura))
 
         binding.recyclerView.adapter = Adapter(items)
     }

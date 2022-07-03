@@ -1,8 +1,10 @@
-package com.example.proyectoandroid_yuritzy
+package com.example.proyectoandroid_yuritzy.splash
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.proyectoandroid_yuritzy.R
+import com.example.proyectoandroid_yuritzy.main.MainActivity
 import kotlin.concurrent.thread
 
 class Splash : AppCompatActivity() {

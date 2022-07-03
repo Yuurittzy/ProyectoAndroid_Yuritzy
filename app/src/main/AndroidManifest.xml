@@ -10,10 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyectoAndroid_Yuritzy">
         <activity
-            android:name=".ProductDetailActivity"
+            android:name=".product_detail.ProductDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".Splash"
+            android:name=".splash.Splash"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,7 +21,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".main.MainActivity" />
 
         <meta-data
             android:name="preloaded_fonts"

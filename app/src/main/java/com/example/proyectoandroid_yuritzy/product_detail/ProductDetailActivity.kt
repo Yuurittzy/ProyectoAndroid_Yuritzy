@@ -1,7 +1,8 @@
-package com.example.proyectoandroid_yuritzy
+package com.example.proyectoandroid_yuritzy.product_detail
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.proyectoandroid_yuritzy.R
 
 class ProductDetailActivity : AppCompatActivity() {
 

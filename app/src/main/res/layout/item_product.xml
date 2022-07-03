@@ -1,60 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
-    android:layout_marginEnd="10dp"
     android:layout_height="wrap_content"
+    android:layout_marginEnd="10dp"
     android:background="@drawable/shape">
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="20dp" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="50dp" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="70dp" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="135dp" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="155dp" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/vertcal_guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="95dp" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/vertcal_guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="110dp" />
 
     <TextView
         android:id="@+id/tv_namebox"
@@ -62,24 +12,27 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:fontFamily="@font/quicksandmedium"
+        android:paddingStart="16dp"
+        android:paddingTop="22dp"
+        android:paddingEnd="16dp"
         android:text="@string/naruto"
         android:textAlignment="center"
         android:textSize="@dimen/font_size4"
-        app:layout_constraintBottom_toTopOf="@id/guideline2"
-        app:layout_constraintEnd_toEndOf="@id/vertcal_guideline"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/guideline1" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
+        android:paddingBottom="22dp"
         android:id="@+id/iv_box"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="15dp"
+        android:layout_marginTop="16dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:src="@drawable/naruto"
-        app:layout_constraintBottom_toTopOf="@id/guideline4"
-        app:layout_constraintEnd_toEndOf="@id/vertcal_guideline"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/guideline3" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_namebox" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

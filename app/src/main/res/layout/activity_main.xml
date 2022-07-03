@@ -83,7 +83,7 @@
 
             <include
                 android:id="@+id/block2"
-                layout="@layout/item_box"
+                layout="@layout/item_product"
                 android:layout_width="115dp"
                 android:layout_height="155dp"
                 android:background="@color/orange"
@@ -92,7 +92,7 @@
 
             <include
                 android:id="@+id/block3"
-                layout="@layout/item_box"
+                layout="@layout/item_product"
                 android:layout_width="115dp"
                 android:layout_height="155dp"
                 android:layout_marginStart="@dimen/space10"
@@ -102,7 +102,7 @@
 
             <include
                 android:id="@+id/block4"
-                layout="@layout/item_box"
+                layout="@layout/item_product"
                 android:layout_width="115dp"
                 android:layout_height="155dp"
                 android:layout_marginStart="@dimen/space10"
@@ -113,7 +113,7 @@
 
             <include
                 android:id="@+id/block5"
-                layout="@layout/item_box"
+                layout="@layout/item_product"
                 android:layout_width="115dp"
                 android:layout_height="155dp"
                 android:layout_marginStart="@dimen/space10"

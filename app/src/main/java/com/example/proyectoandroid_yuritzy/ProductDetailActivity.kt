@@ -2,14 +2,13 @@ package com.example.proyectoandroid_yuritzy
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.proyectoandroid_yuritzy.databinding.ActivityMainBinding
 
-class MainActivity2 : AppCompatActivity() {
+class ProductDetailActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main2)
+        setContentView(R.layout.activity_product_detail)
 
 
     }

@@ -1,25 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:id="@+id/home"
-        android:title="@string/buy"
+    <item
+        android:id="@+id/home"
+        android:enabled="true"
         android:icon="@drawable/ic_home"
+        android:title="@string/buy" />
+
+    <item
+        android:id="@+id/fav"
         android:enabled="true"
-        />
-    <item android:id="@+id/fav"
-        android:title="@string/favourites"
         android:icon="@drawable/ic_favourite"
+        android:title="@string/favourites" />
+
+    <item
+        android:id="@+id/account"
         android:enabled="true"
-        />
-    <item android:id="@+id/account"
-        android:title="@string/my_account"
         android:icon="@drawable/ic_user"
+        android:title="@string/my_account" />
+
+    <item
+        android:id="@+id/shopping_cart"
         android:enabled="true"
-        />
-    <item android:id="@+id/shopping_cart"
-        android:title="@string/shopping_cart"
         android:icon="@drawable/ic_shopping_cart"
-        android:enabled="true"
-        />
+        android:title="@string/shopping_cart" />
 
 </menu>

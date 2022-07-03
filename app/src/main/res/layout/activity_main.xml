@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+    android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
-
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="wrap_content"
         android:background="@color/purple_100"
+        app:layout_constraintTop_toTopOf="parent"
         app:title="Yuu Ritzy"
-        app:titleTextColor="@color/white">
-
-    </androidx.appcompat.widget.Toolbar>
+        app:titleTextColor="@color/white" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_landing_page"
         android:layout_width="match_parent"
         android:layout_height="@dimen/mini_toolbar"
-        android:background="#FCEA7E">
+        android:background="#FCEA7E"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
         <ImageView
             android:id="@+id/ic_location"
@@ -49,18 +49,22 @@
         android:id="@+id/iv_perfect_gift"
         android:layout_width="match_parent"
         android:layout_height="255dp"
+        app:layout_constraintTop_toBottomOf="@+id/layout_landing_page"
         app:srcCompat="@drawable/perfect_gift_copy" />
 
     <TextView
+        android:id="@+id/textView_perfect_gift"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/quicksandsemibold"
         android:text="@string/perfect_gift"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="@dimen/font_size5" />
+        android:textSize="@dimen/font_size5"
+        app:layout_constraintTop_toBottomOf="@id/iv_perfect_gift" />
 
     <TextView
+        android:id="@+id/textView_secret_box"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/icons"
@@ -68,71 +72,31 @@
         android:fontFamily="@font/quicksandmedium"
         android:text="@string/surprise_box"
         android:textColor="@color/black"
-        android:textSize="@dimen/font_size4" />
+        android:textSize="@dimen/font_size4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_perfect_gift" />
 
-    <HorizontalScrollView
-        android:id="@+id/scroll"
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginTop="@dimen/icons">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:padding="@dimen/space10">
-
-            <include
-                android:id="@+id/block2"
-                layout="@layout/item_product"
-                android:layout_width="115dp"
-                android:layout_height="155dp"
-                android:background="@color/orange"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <include
-                android:id="@+id/block3"
-                layout="@layout/item_product"
-                android:layout_width="115dp"
-                android:layout_height="155dp"
-                android:layout_marginStart="@dimen/space10"
-                android:background="@color/orange"
-                app:layout_constraintStart_toEndOf="@+id/block2"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <include
-                android:id="@+id/block4"
-                layout="@layout/item_product"
-                android:layout_width="115dp"
-                android:layout_height="155dp"
-                android:layout_marginStart="@dimen/space10"
-                android:layout_marginLeft="@dimen/space10"
-                android:background="@color/orange"
-                app:layout_constraintStart_toEndOf="@+id/block3"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <include
-                android:id="@+id/block5"
-                layout="@layout/item_product"
-                android:layout_width="115dp"
-                android:layout_height="155dp"
-                android:layout_marginStart="@dimen/space10"
-                android:layout_marginLeft="@dimen/space10"
-                android:background="@color/orange"
-                app:layout_constraintStart_toEndOf="@+id/block4"
-                app:layout_constraintTop_toTopOf="parent" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </HorizontalScrollView>
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/icons"
+        android:orientation="horizontal"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@id/btn_nav_view"
+        app:layout_constraintTop_toBottomOf="@id/textView_secret_box"
+        tools:listitem="@layout/item_product" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/btn_nav_view"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
         android:background="@color/yellow_200"
         app:itemIconTint="@color/purple_100"
         app:itemTextColor="@color/purple_100"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/menu_nav" />
 
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

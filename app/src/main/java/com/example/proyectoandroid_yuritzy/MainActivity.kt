@@ -16,10 +16,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.block2.root.setOnClickListener {
-            startActivity(Intent(this, ProductDetailActivity::class.java))
-
-        }
     }
 
 }

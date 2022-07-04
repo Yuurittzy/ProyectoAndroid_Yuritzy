@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/scrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:context=".product_detail.ProductDetailActivity">
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/themathic"
@@ -32,23 +29,23 @@
             android:layout_height="wrap_content"
             android:numStars="5"
             android:progressTint="@color/purple_200"
-            android:secondaryProgressTint="@color/white"
             android:rating="4.5"
             android:scaleX="0.8"
             android:scaleY="0.8"
+            android:secondaryProgressTint="@color/white"
             android:stepSize="0.5"
             app:layout_constraintEnd_toStartOf="@+id/num_reviews"
             app:layout_constraintTop_toBottomOf="@+id/themathic" />
 
         <TextView
-            android:layout_marginEnd="20dp"
             android:id="@+id/num_reviews"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
+            android:layout_marginEnd="20dp"
             android:gravity="center"
             android:text="@string/num_reviews"
-            android:textColor="@color/purple_200"
             android:textAlignment="center"
+            android:textColor="@color/purple_200"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/themathic" />
 
@@ -82,6 +79,7 @@
             android:textSize="@dimen/font_size6"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_initial_price" />
+
 
         <TextView
             android:id="@+id/tv_final_price_cents"
@@ -159,6 +157,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_shipping_time" />
 
+
         <TextView
             android:id="@+id/tv_include"
             android:layout_width="match_parent"
@@ -186,4 +185,5 @@
             app:layout_constraintTop_toBottomOf="@id/tv_include" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </ScrollView>

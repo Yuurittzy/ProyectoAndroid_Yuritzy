@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
 
                 R.id.shopping_cart -> setCurrentFragment(CheckoutFragment())
             }
-            false
+            true
         }
     }
 

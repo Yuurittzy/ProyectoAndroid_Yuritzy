@@ -14,5 +14,6 @@
     <color name="pink">#E978C5</color>
     <color name="blue">#4DB9D3</color>
     <color name="aqua">#53C0C3</color>
+    <color name="gray">#aaa</color>
 
 </resources>

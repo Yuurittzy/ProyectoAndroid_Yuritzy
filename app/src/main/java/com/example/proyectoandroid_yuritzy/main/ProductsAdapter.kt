@@ -5,14 +5,14 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.proyectoandroid_yuritzy.R
 
-class Adapter(private val items: List<Product>): RecyclerView.Adapter<ViewHolder>() {
+class ProductsAdapter(private val items: List<Product>): RecyclerView.Adapter<ProductsViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductsViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_product, parent, false)
-        return ViewHolder(view)
+        return ProductsViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ProductsViewHolder, position: Int) {
         holder.setItem(items[position])
     }
 

@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.proyectoandroid_yuritzy.R
 import com.example.proyectoandroid_yuritzy.product_detail.ProductDetailActivity
 
-class ViewHolder(private val view: View): RecyclerView.ViewHolder(view) {
+class ProductsViewHolder(private val view: View): RecyclerView.ViewHolder(view) {
 
     fun setItem(product: Product) {
         view.findViewById<TextView>(R.id.tv_namebox).text = product.name

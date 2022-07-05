@@ -2,15 +2,21 @@ package com.example.proyectoandroid_yuritzy.product_detail
 
 import android.graphics.PorterDuff.Mode.MULTIPLY
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.example.proyectoandroid_yuritzy.R
+import com.example.proyectoandroid_yuritzy.database.DatabaseController
 import com.example.proyectoandroid_yuritzy.databinding.ActivityProductDetailBinding
 import com.example.proyectoandroid_yuritzy.main.Product
 
 class ProductDetailActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityProductDetailBinding
+
+    private val databaseController by lazy { DatabaseController(this) }
+
+    private var product = Product(0)
 
     private var isProductLiked = false
 
@@ -20,15 +26,21 @@ class ProductDetailActivity : AppCompatActivity() {
         binding = ActivityProductDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setSupportActionBar(binding.toolbarProductDetail)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+
         intent.extras?.let { setProductDetail(it.get("product") as Product) }
 
         onClickLikeButton()
     }
 
     private fun setProductDetail(product: Product) {
+        this.product = product
+
         binding.themathic.text = getString(R.string.thematic, product.name)
-        binding.ratingBar.rating = product.rating.toFloat()
-        binding.ivPreview.setImageDrawable(ContextCompat.getDrawable(this, product.previewImage))
+        binding.ratingBar.rating = product.rating?.toFloat()?: 0F
+        binding.ivPreview.setImageDrawable(product.previewImage?.let { ContextCompat.getDrawable(this, it) })
         binding.tvInitialPrice.text = getString(R.string.price_initial, product.price)
         binding.tvFinalPrice.text = getString(R.string.price_final, product.priceWithDiscount)
         binding.tvDiscount.text = "% ${getString(R.string.discount, product.discountPercent)}"
@@ -39,7 +51,19 @@ class ProductDetailActivity : AppCompatActivity() {
             binding.ivFavourite.setColorFilter(
                 ContextCompat.getColor(this, if (!isProductLiked) R.color.orange else R.color.gray), MULTIPLY)
                 isProductLiked = !isProductLiked
+
+            if (isProductLiked) {
+                databaseController.addProduct(this.product)
+            }
         }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == android.R.id.home) {
+            finish()
+        }
+
+        return super.onOptionsItemSelected(item)
     }
 
 }

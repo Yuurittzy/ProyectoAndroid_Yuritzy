@@ -13,7 +13,7 @@ class ProductsViewHolder(private val view: View): RecyclerView.ViewHolder(view) 
 
     fun setItem(product: Product) {
         view.findViewById<TextView>(R.id.tv_namebox).text = product.name
-        view.findViewById<ImageView>(R.id.iv_box).setImageDrawable(ContextCompat.getDrawable(itemView.context, product.image))
+        view.findViewById<ImageView>(R.id.iv_box).setImageDrawable(product.image?.let { ContextCompat.getDrawable(itemView.context, it) })
         onClick(product)
     }
 

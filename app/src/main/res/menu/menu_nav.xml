@@ -10,7 +10,7 @@
     <item
         android:id="@+id/fav"
         android:enabled="true"
-        android:icon="@drawable/ic_favourite"
+        android:icon="@drawable/ic_favourite_full"
         android:title="@string/favourites" />
 
     <item

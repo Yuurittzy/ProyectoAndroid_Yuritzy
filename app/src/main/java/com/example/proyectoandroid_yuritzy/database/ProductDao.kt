@@ -5,12 +5,13 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import com.example.proyectoandroid_yuritzy.main.Product
+import io.reactivex.rxjava3.core.Single
 
 @Dao
 interface ProductDao {
 
     @Query("SELECT * FROM product")
-    fun getProducts(): List<Product>
+    fun getProducts(): Single<List<Product>>
 
     @Insert
     fun addProduct(product: Product)

@@ -15,8 +15,8 @@
         android:layout_height="120dp"
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
-        android:src="@drawable/ic_account_circle"
-        app:tint="@color/blue" />
+        android:scaleType="fitXY"
+        android:src="@drawable/yuu_circle" />
 
     <TextView
         android:layout_width="wrap_content"

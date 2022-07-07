@@ -9,12 +9,13 @@ import com.example.proyectoandroid_yuritzy.R
 import com.example.proyectoandroid_yuritzy.database.DatabaseController
 import com.example.proyectoandroid_yuritzy.databinding.ActivityProductDetailBinding
 import com.example.proyectoandroid_yuritzy.main.Product
+import kotlin.concurrent.thread
 
 class ProductDetailActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityProductDetailBinding
 
-    private val databaseController by lazy { DatabaseController(this) }
+    private lateinit var databaseController: DatabaseController
 
     private var product = Product(0)
 
@@ -31,6 +32,8 @@ class ProductDetailActivity : AppCompatActivity() {
         supportActionBar?.setDisplayShowHomeEnabled(true)
 
         intent.extras?.let { setProductDetail(it.get("product") as Product) }
+
+        databaseController = DatabaseController(this)
 
         onClickLikeButton()
     }
@@ -53,7 +56,7 @@ class ProductDetailActivity : AppCompatActivity() {
                 isProductLiked = !isProductLiked
 
             if (isProductLiked) {
-                databaseController.addProduct(this.product)
+                thread { databaseController.addProduct(this.product) }
             }
         }
     }

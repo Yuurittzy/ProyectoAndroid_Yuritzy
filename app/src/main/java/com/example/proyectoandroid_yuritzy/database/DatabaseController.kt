@@ -3,6 +3,7 @@ package com.example.proyectoandroid_yuritzy.database
 import android.content.Context
 import androidx.room.Room
 import com.example.proyectoandroid_yuritzy.main.Product
+import io.reactivex.rxjava3.core.Completable
 import io.reactivex.rxjava3.core.Single
 
 class DatabaseController(context: Context) {
@@ -18,8 +19,8 @@ class DatabaseController(context: Context) {
         productDao.addProduct(product)
     }
 
-    fun deleteProduct(product: Product) {
-        productDao.deleteProduct(product)
+    fun deleteProduct(product: Product): Completable {
+        return productDao.deleteProduct(product)
     }
 
 }

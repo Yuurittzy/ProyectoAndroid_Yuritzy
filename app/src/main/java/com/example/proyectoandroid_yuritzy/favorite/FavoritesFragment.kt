@@ -8,12 +8,13 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.example.proyectoandroid_yuritzy.R
 import com.example.proyectoandroid_yuritzy.database.DatabaseController
+import com.example.proyectoandroid_yuritzy.main.Product
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.schedulers.Schedulers
 
-class FavoritesFragment : Fragment() {
+class FavoritesFragment : Fragment(), FavoritesInterface {
 
     private val compositeDisposable = CompositeDisposable()
 
@@ -24,16 +25,23 @@ class FavoritesFragment : Fragment() {
 
         databaseController = DatabaseController(context?: requireContext())
 
-        setUpRecyclerView(view)
+        getFavoritesProducts(view)
 
         return view
     }
 
-    private fun setUpRecyclerView(view: View) {
+    private fun getFavoritesProducts(view: View) {
         compositeDisposable.add(databaseController.getProducts()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe({ view.findViewById<RecyclerView>(R.id.recyclerView_favorites)?.adapter = FavoritesAdapter(it) }, { }))
+            .subscribe({ view.findViewById<RecyclerView>(R.id.recyclerView_favorites)?.adapter = FavoritesAdapter(it, this) }, { }))
+    }
+
+    override fun deleteFavoriteProduct(product: Product) {
+        compositeDisposable.add(databaseController.deleteProduct(product)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({ this.view?.let { getFavoritesProducts(it) } }, { }))
     }
 
 }

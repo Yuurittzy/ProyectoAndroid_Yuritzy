@@ -6,11 +6,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.proyectoandroid_yuritzy.R
 import com.example.proyectoandroid_yuritzy.main.Product
 
-class FavoritesAdapter(private val items: List<Product>): RecyclerView.Adapter<FavoritesViewHolder>() {
+class FavoritesAdapter(private val items: List<Product>, private val favoritesInterface: FavoritesInterface): RecyclerView.Adapter<FavoritesViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FavoritesViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_favorite_product, parent, false)
-        return FavoritesViewHolder(view)
+        return FavoritesViewHolder(view, favoritesInterface)
     }
 
     override fun onBindViewHolder(holder: FavoritesViewHolder, position: Int) {

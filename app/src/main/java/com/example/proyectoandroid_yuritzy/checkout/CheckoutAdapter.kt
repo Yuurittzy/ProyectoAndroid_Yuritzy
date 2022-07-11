@@ -6,11 +6,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.proyectoandroid_yuritzy.R
 import com.example.proyectoandroid_yuritzy.main.Product
 
-class CheckoutAdapter(private val items: List<Product>): RecyclerView.Adapter<CheckoutViewHolder>() {
+class CheckoutAdapter(private val items: List<Product>, private val checkoutInterface: CheckoutInterface): RecyclerView.Adapter<CheckoutViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CheckoutViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_product_checkout, parent, false)
-        return CheckoutViewHolder(view)
+        return CheckoutViewHolder(view, checkoutInterface)
     }
 
     override fun onBindViewHolder(holder: CheckoutViewHolder, position: Int) {

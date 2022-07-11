@@ -65,17 +65,18 @@
         app:layout_constraintBottom_toTopOf="@id/button_checkout" />
 
     <TextView
+        android:id="@+id/texview_final_price"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginEnd="16dp"
         android:gravity="center"
-        android:text="$1050"
         android:textColor="@color/black"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/button_checkout"
         app:layout_constraintEnd_toStartOf="@id/button_checkout"
-        app:layout_constraintTop_toTopOf="@id/button_checkout" />
+        app:layout_constraintTop_toTopOf="@id/button_checkout"
+        tools:text="$1050" />
 
     <TextView
         android:id="@+id/button_checkout"

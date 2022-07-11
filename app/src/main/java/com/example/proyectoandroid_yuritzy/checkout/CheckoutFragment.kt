@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.example.proyectoandroid_yuritzy.R
@@ -13,7 +14,7 @@ import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.schedulers.Schedulers
 
-class CheckoutFragment : Fragment() {
+class CheckoutFragment : Fragment(), CheckoutInterface {
 
     private val compositeDisposable = CompositeDisposable()
 
@@ -33,17 +34,20 @@ class CheckoutFragment : Fragment() {
         compositeDisposable.add(checkoutDatabaseController.getProducts()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe({ view.findViewById<RecyclerView>(R.id.recyclerView_checkout)?.adapter = CheckoutAdapter(it) }, { }))
+            .subscribe({
+                view.findViewById<RecyclerView>(R.id.recyclerView_checkout)?.adapter = CheckoutAdapter(it, this)
+                this.view?.findViewById<TextView>(R.id.texview_final_price)?.text = getString(R.string.price_final, it.sumOf { (it.priceWithDiscount?: 0) * (it.quantity?: 0) })
+            }, { }))
     }
 
-    private fun updateProduct(product: Product) {
+    override fun updateProductQuantity(product: Product) {
         compositeDisposable.add(checkoutDatabaseController.updateProduct(product)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({ this.view?.let { getProducts(it) } }, { }))
     }
 
-    private fun deleteFavoriteProduct(product: Product) {
+    override fun deleteProductQuantity(product: Product) {
         compositeDisposable.add(checkoutDatabaseController.deleteProduct(product)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())

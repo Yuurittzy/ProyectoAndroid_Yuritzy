@@ -4,14 +4,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.appcompat.widget.Toolbar
+    <TextView
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="70dp"
         android:background="@color/purple_100"
         app:layout_constraintTop_toTopOf="parent"
-        app:title="Yuu Ritzy"
-        app:titleTextColor="@color/white" />
+        android:text="@string/yuu_ritzy"
+        android:gravity="center"
+        android:textSize="36sp"
+        android:fontFamily="@font/quicksandbold"
+        android:textColor="@color/white" />
 
     <FrameLayout
         android:id="@+id/fragment_main"

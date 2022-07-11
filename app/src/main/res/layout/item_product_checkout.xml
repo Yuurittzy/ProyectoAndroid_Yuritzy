@@ -20,8 +20,9 @@
         android:id="@+id/tv_thematic_checkout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/quicksandbold"
         android:layout_marginTop="40dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/quicksandbold"
         android:text="@string/thematic"
         android:textColor="@color/black"
         android:textSize="@dimen/font_size2"
@@ -53,6 +54,38 @@
         app:layout_constraintStart_toStartOf="@+id/vguideline1"
         app:layout_constraintTop_toBottomOf="@+id/tv_thematic_checkout"
         tools:text="$990" />
+
+    <ImageView
+        android:id="@+id/tv_minus"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/ic_minus"
+        app:layout_constraintEnd_toStartOf="@id/tv_quantity"
+        app:layout_constraintTop_toBottomOf="@+id/tv_final_price_checkout" />
+
+    <TextView
+        android:id="@+id/tv_quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toStartOf="@id/tv_more"
+        app:layout_constraintTop_toTopOf="@id/tv_more"
+        app:layout_constraintBottom_toBottomOf="@id/tv_more"
+        tools:text="1" />
+
+    <ImageView
+        android:id="@+id/tv_more"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="40dp"
+        android:src="@drawable/ic_plus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_final_price_checkout" />
 
     <TextView
         android:id="@+id/tv_final_price_cents"

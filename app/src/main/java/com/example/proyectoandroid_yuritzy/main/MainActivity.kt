@@ -26,13 +26,13 @@ class MainActivity : AppCompatActivity() {
     private fun setUpBottomSheet() {
         binding.btnNavView.setOnItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.home -> setCurrentFragment(MainFragment())
+                R.id.home -> { setCurrentFragment(MainFragment()); binding.toolbar.text = getText(R.string.yuu_ritzy) }
 
-                R.id.fav -> setCurrentFragment(FavoritesFragment())
+                R.id.fav -> { setCurrentFragment(FavoritesFragment()); binding.toolbar.text = getText(R.string.favourites) }
 
-                R.id.account -> setCurrentFragment(ProfileFragment())
+                R.id.account -> { setCurrentFragment(ProfileFragment()); binding.toolbar.text = getText(R.string.my_account) }
 
-                R.id.shopping_cart -> setCurrentFragment(CheckoutFragment())
+                R.id.shopping_cart -> { setCurrentFragment(CheckoutFragment()); binding.toolbar.text = getText(R.string.shopping_cart) }
             }
             true
         }

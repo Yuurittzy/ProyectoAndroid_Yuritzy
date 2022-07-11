@@ -6,21 +6,21 @@ import com.example.proyectoandroid_yuritzy.main.Product
 import io.reactivex.rxjava3.core.Completable
 import io.reactivex.rxjava3.core.Single
 
-class DatabaseController(context: Context) {
+class CheckoutDatabaseController(context: Context) {
 
-    private val dataBase = Room.databaseBuilder(context, AppDataBase::class.java, "database-name").build()
-    private val productDao = dataBase.productDao()
+    private val dataBase = Room.databaseBuilder(context, AppDataBase::class.java, "checkout").build()
+    private val checkoutDao = dataBase.checkoutDao()
 
     fun getProducts(): Single<List<Product>> {
-        return productDao.getProducts()
+        return checkoutDao.getProducts()
     }
 
     fun addProduct(product: Product) {
-        productDao.addProduct(product)
+        checkoutDao.addProduct(product)
     }
 
     fun deleteProduct(product: Product): Completable {
-        return productDao.deleteProduct(product)
+        return checkoutDao.deleteProduct(product)
     }
 
 }

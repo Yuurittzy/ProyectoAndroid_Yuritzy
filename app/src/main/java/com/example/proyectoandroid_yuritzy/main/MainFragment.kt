@@ -18,13 +18,12 @@ class MainFragment: Fragment() {
 
     private fun setUpRecyclerView(view: View) {
         val items = listOf(
-            Product(0, getString(R.string.naruto), R.drawable.naruto, R.drawable.naruto_preview, 3, 1000, 900, 10),
-            Product(1, getString(R.string.sasuke), R.drawable.sasuke, R.drawable.sasuke_preview, 4, 1000, 800, 20),
             Product(2, getString(R.string.itachi), R.drawable.itachi, R.drawable.itachi_preview, 3, 1000, 600, 40),
-            Product(3, getString(R.string.kakashi), R.drawable.kakashi, R.drawable.kakashi_preview, 5, 1000, 900, 10),
+            Product(0, getString(R.string.naruto), R.drawable.naruto, R.drawable.naruto_preview, 3, 1000, 900, 10),
             Product(4, getString(R.string.sakura), R.drawable.sakura, R.drawable.sasuke_preview, 5, 1000, 700, 30),
-            Product(5, getString(R.string.minato), R.drawable.minato, R.drawable.minato_preview, 4, 1000, 700, 30)
-        )
+            Product(3, getString(R.string.kakashi), R.drawable.kakashi, R.drawable.kakashi_preview, 5, 1000, 900, 10),
+            Product(5, getString(R.string.minato), R.drawable.minato, R.drawable.minato_preview, 4, 1000, 700, 30),
+            Product(1, getString(R.string.sasuke), R.drawable.sasuke, R.drawable.sasuke_preview, 4, 1000, 800, 20),)
 
         view.findViewById<RecyclerView>(R.id.recyclerView)?.adapter = ProductsAdapter(items)
     }

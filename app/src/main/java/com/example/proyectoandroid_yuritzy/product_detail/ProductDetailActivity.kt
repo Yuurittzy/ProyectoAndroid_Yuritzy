@@ -6,7 +6,8 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.example.proyectoandroid_yuritzy.R
-import com.example.proyectoandroid_yuritzy.database.DatabaseController
+import com.example.proyectoandroid_yuritzy.database.CheckoutDatabaseController
+import com.example.proyectoandroid_yuritzy.database.ProductsDatabaseController
 import com.example.proyectoandroid_yuritzy.databinding.ActivityProductDetailBinding
 import com.example.proyectoandroid_yuritzy.main.Product
 import kotlin.concurrent.thread
@@ -15,7 +16,8 @@ class ProductDetailActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityProductDetailBinding
 
-    private lateinit var databaseController: DatabaseController
+    private lateinit var productsDatabaseController: ProductsDatabaseController
+    private lateinit var checkoutDatabaseController: CheckoutDatabaseController
 
     private var product = Product(0)
 
@@ -33,9 +35,11 @@ class ProductDetailActivity : AppCompatActivity() {
 
         intent.extras?.let { setProductDetail(it.get("product") as Product) }
 
-        databaseController = DatabaseController(this)
+        productsDatabaseController = ProductsDatabaseController(this)
+        checkoutDatabaseController = CheckoutDatabaseController(this)
 
         onClickLikeButton()
+        onClickAddToCar()
     }
 
     private fun setProductDetail(product: Product) {
@@ -56,8 +60,14 @@ class ProductDetailActivity : AppCompatActivity() {
                 isProductLiked = !isProductLiked
 
             if (isProductLiked) {
-                thread { databaseController.addProduct(this.product) }
+                thread { productsDatabaseController.addProduct(product) }
             }
+        }
+    }
+
+    private fun onClickAddToCar() {
+        binding.button3.setOnClickListener {
+            thread { checkoutDatabaseController.addProduct(product) }
         }
     }
 

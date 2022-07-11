@@ -17,6 +17,9 @@ interface CheckoutDao {
     @Insert
     fun addProduct(product: Product)
 
+    @Query("UPDATE product SET quantity = :quantity WHERE id = :id")
+    fun updateProduct(id: Int, quantity: Int): Completable
+
     @Delete
     fun deleteProduct(product: Product): Completable
 

@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.example.proyectoandroid_yuritzy.R
 import com.example.proyectoandroid_yuritzy.database.CheckoutDatabaseController
+import com.example.proyectoandroid_yuritzy.main.Product
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.schedulers.Schedulers
@@ -33,6 +34,20 @@ class CheckoutFragment : Fragment() {
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({ view.findViewById<RecyclerView>(R.id.recyclerView_checkout)?.adapter = CheckoutAdapter(it) }, { }))
+    }
+
+    private fun updateProduct(product: Product) {
+        compositeDisposable.add(checkoutDatabaseController.updateProduct(product)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({ this.view?.let { getProducts(it) } }, { }))
+    }
+
+    private fun deleteFavoriteProduct(product: Product) {
+        compositeDisposable.add(checkoutDatabaseController.deleteProduct(product)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({ this.view?.let { getProducts(it) } }, { }))
     }
 
 }

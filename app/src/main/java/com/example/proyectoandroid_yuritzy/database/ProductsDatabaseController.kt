@@ -8,7 +8,11 @@ import io.reactivex.rxjava3.core.Single
 
 class ProductsDatabaseController(context: Context) {
 
-    private val dataBase = Room.databaseBuilder(context, AppDataBase::class.java, "products").build()
+    private val dataBase = Room
+        .databaseBuilder(context, AppDataBase::class.java, "products")
+        .fallbackToDestructiveMigration()
+        .build()
+
     private val productDao = dataBase.productDao()
 
     fun getProducts(): Single<List<Product>> {

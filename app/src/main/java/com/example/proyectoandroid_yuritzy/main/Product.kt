@@ -15,4 +15,5 @@ class Product(@PrimaryKey val id: Int,
               @ColumnInfo(name = "rating") val rating: Int? = 0,
               @ColumnInfo(name = "price") val price: Int? = 0,
               @ColumnInfo(name = "price_with_discount") val priceWithDiscount: Int? = 0,
-              @ColumnInfo(name = "discount_percent") val discountPercent: Int? = 0): Parcelable
+              @ColumnInfo(name = "discount_percent") val discountPercent: Int? = 0,
+              @ColumnInfo(name = "quantity") val quantity: Int? = 1): Parcelable

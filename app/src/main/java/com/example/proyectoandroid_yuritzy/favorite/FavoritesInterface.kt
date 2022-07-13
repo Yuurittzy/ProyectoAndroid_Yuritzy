@@ -6,4 +6,6 @@ interface FavoritesInterface {
 
     fun deleteFavoriteProduct(product: Product)
 
+    fun addProductToCar(product: Product)
+
 }

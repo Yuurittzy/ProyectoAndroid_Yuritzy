@@ -7,8 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.example.proyectoandroid_yuritzy.R
+import com.example.proyectoandroid_yuritzy.product_detail.ProductDetailFragment
 
-class MainFragment: Fragment() {
+class MainFragment: Fragment(), MainInterface {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_main, container, false)
@@ -25,7 +26,18 @@ class MainFragment: Fragment() {
             Product(5, getString(R.string.minato), R.drawable.minato, R.drawable.minato_preview, 4, 1000, 700, 30),
             Product(1, getString(R.string.sasuke), R.drawable.sasuke, R.drawable.sasuke_preview, 4, 1000, 800, 20),)
 
-        view.findViewById<RecyclerView>(R.id.recyclerView)?.adapter = ProductsAdapter(items)
+        view.findViewById<RecyclerView>(R.id.recyclerView)?.adapter = ProductsAdapter(items, this)
+    }
+
+    override fun openProductDetail(product: Product) {
+        val fragment = ProductDetailFragment()
+        activity?.supportFragmentManager?.beginTransaction()?.apply {
+            val bundle = Bundle()
+            bundle.putParcelable("PRODUCT", product)
+            fragment.arguments = bundle
+            add(R.id.fragment_main, fragment)
+            commit()
+        }
     }
 
 }

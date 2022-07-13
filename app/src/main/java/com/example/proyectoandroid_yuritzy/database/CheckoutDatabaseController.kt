@@ -19,8 +19,8 @@ class CheckoutDatabaseController(context: Context) {
         return checkoutDao.getProducts()
     }
 
-    fun addProduct(product: Product) {
-        checkoutDao.addProduct(product)
+    fun addProduct(product: Product): Completable {
+        return checkoutDao.addProduct(product)
     }
 
     fun updateProduct(product: Product): Completable {

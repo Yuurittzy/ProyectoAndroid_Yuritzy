@@ -64,17 +64,6 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_thematic" />
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:text="@string/num_reviews"
-        android:textColor="@color/purple_200"
-        android:textSize="@dimen/font_size0"
-        app:layout_constraintStart_toEndOf="@+id/ratingBar2"
-        app:layout_constraintTop_toBottomOf="@+id/tv_thematic" />
-
-    <TextView
         android:id="@+id/tv_final_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

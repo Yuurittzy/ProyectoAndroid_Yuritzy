@@ -1,6 +1,8 @@
 package com.example.proyectoandroid_yuritzy.main
 
 import android.os.Bundle
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.proyectoandroid_yuritzy.R
@@ -26,13 +28,13 @@ class MainActivity : AppCompatActivity() {
     private fun setUpBottomSheet() {
         binding.btnNavView.setOnItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.home -> { setCurrentFragment(MainFragment()); binding.toolbar.text = getText(R.string.yuu_ritzy) }
+                R.id.home -> { setCurrentFragment(MainFragment()); findViewById<TextView>(R.id.textView_title).text = getText(R.string.yuu_ritzy) }
 
-                R.id.fav -> { setCurrentFragment(FavoritesFragment()); binding.toolbar.text = getText(R.string.favourites) }
+                R.id.fav -> { setCurrentFragment(FavoritesFragment()); findViewById<TextView>(R.id.textView_title).text = getText(R.string.favourites) }
 
-                R.id.account -> { setCurrentFragment(ProfileFragment()); binding.toolbar.text = getText(R.string.my_account) }
+                R.id.account -> { setCurrentFragment(ProfileFragment()); findViewById<TextView>(R.id.textView_title).text = getText(R.string.my_account) }
 
-                R.id.shopping_cart -> { setCurrentFragment(CheckoutFragment()); binding.toolbar.text = getText(R.string.shopping_cart) }
+                R.id.shopping_cart -> { setCurrentFragment(CheckoutFragment()); findViewById<TextView>(R.id.textView_title).text = getText(R.string.shopping_cart) }
             }
             true
         }

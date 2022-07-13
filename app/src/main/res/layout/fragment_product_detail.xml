@@ -3,21 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar_product_detail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/purple_100"
-        app:layout_constraintTop_toTopOf="parent"
-        app:title="Yuu Ritzy"
-        app:titleTextColor="@color/white" />
+    android:layout_height="match_parent"
+    android:background="@color/white">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/toolbar_product_detail">
+        android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -42,6 +33,7 @@
                 style="@android:style/Widget.Holo.Light.RatingBar.Indicator"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
                 android:numStars="5"
                 android:progressTint="@color/purple_200"
                 android:rating="4.5"
@@ -49,18 +41,6 @@
                 android:scaleY="0.8"
                 android:secondaryProgressTint="@color/white"
                 android:stepSize="0.5"
-                app:layout_constraintEnd_toStartOf="@+id/num_reviews"
-                app:layout_constraintTop_toBottomOf="@+id/themathic" />
-
-            <TextView
-                android:id="@+id/num_reviews"
-                android:layout_width="wrap_content"
-                android:layout_height="35dp"
-                android:layout_marginEnd="20dp"
-                android:gravity="center"
-                android:text="@string/num_reviews"
-                android:textAlignment="center"
-                android:textColor="@color/purple_200"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/themathic" />
 

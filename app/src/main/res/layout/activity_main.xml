@@ -4,17 +4,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
+    <RelativeLayout
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:background="@color/purple_100"
-        app:layout_constraintTop_toTopOf="parent"
-        android:text="@string/yuu_ritzy"
-        android:gravity="center"
-        android:textSize="36sp"
-        android:fontFamily="@font/quicksandbold"
-        android:textColor="@color/white" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:visibility="gone"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="22dp"
+            android:src="@drawable/ic_back"
+            app:tint="@color/white" />
+
+        <TextView
+            android:layout_centerInParent="true"
+            android:id="@+id/textView_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/quicksandbold"
+            android:gravity="center"
+            android:text="@string/yuu_ritzy"
+            android:textColor="@color/white"
+            android:textSize="36sp" />
+
+    </RelativeLayout>
+
 
     <FrameLayout
         android:id="@+id/fragment_main"

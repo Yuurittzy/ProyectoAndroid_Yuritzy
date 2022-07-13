@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyectoAndroid_Yuritzy">
         <activity
-            android:name=".product_detail.ProductDetailActivity"
+            android:name=".product_detail.ProductDetailFragment"
             android:exported="false" />
         <activity
             android:name=".splash.Splash"

@@ -36,7 +36,7 @@ class CheckoutFragment : Fragment(), CheckoutInterface {
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
                 view.findViewById<RecyclerView>(R.id.recyclerView_checkout)?.adapter = CheckoutAdapter(it, this)
-                this.view?.findViewById<TextView>(R.id.texview_final_price)?.text = getString(R.string.price_final, it.sumOf { (it.priceWithDiscount?: 0) * (it.quantity?: 0) })
+                this.view?.findViewById<TextView>(R.id.texview_final_price)?.text = getString(R.string.price_final, it.sumOf { (it.priceWithDiscount?: 0) * (it.quantity?: 0) } + 50)
             }, { }))
     }
 

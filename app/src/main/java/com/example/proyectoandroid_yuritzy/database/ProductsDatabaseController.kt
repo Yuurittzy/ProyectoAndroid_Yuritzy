@@ -19,8 +19,8 @@ class ProductsDatabaseController(context: Context) {
         return productDao.getProducts()
     }
 
-    fun addProduct(product: Product) {
-        productDao.addProduct(product)
+    fun addProduct(product: Product): Completable {
+        return productDao.addProduct(product)
     }
 
     fun deleteProduct(product: Product): Completable {

@@ -15,7 +15,7 @@ interface ProductDao {
     fun getProducts(): Single<List<Product>>
 
     @Insert
-    fun addProduct(product: Product)
+    fun addProduct(product: Product): Completable
 
     @Delete
     fun deleteProduct(product: Product): Completable

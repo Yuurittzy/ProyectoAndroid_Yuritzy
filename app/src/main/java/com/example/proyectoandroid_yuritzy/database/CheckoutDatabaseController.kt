@@ -19,6 +19,10 @@ class CheckoutDatabaseController(context: Context) {
         return checkoutDao.getProducts()
     }
 
+    fun getProductById(id: Long): Single<Product> {
+        return checkoutDao.getProductById(id)
+    }
+
     fun addProduct(product: Product): Completable {
         return checkoutDao.addProduct(product)
     }

@@ -14,6 +14,9 @@ interface CheckoutDao {
     @Query("SELECT * FROM product")
     fun getProducts(): Single<List<Product>>
 
+    @Query("SELECT * FROM product WHERE id = :id")
+    fun getProductById(id: Long): Single<Product>
+
     @Insert
     fun addProduct(product: Product): Completable
 

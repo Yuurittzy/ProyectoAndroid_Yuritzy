@@ -20,6 +20,10 @@ class ProductsDatabaseController(context: Context) {
         return productDao.getProducts()
     }
 
+    fun getProductById(id: Long): Single<Product> {
+        return productDao.getProductById(id)
+    }
+
     fun addProduct(product: Product): Completable {
         return productDao.addProduct(product)
     }

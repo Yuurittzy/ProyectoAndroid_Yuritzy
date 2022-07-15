@@ -22,6 +22,8 @@ class FavoritesFragment : Fragment(), FavoritesInterface {
     private lateinit var productsDatabaseController: ProductsDatabaseController
     private lateinit var checkoutDatabaseController: CheckoutDatabaseController
 
+    private lateinit var localView: View
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_favorites, container, false)
 
@@ -29,6 +31,8 @@ class FavoritesFragment : Fragment(), FavoritesInterface {
         checkoutDatabaseController = CheckoutDatabaseController(context?: requireContext())
 
         getFavoritesProducts(view)
+
+        localView = view
 
         return view
     }
@@ -44,7 +48,10 @@ class FavoritesFragment : Fragment(), FavoritesInterface {
         compositeDisposable.add(productsDatabaseController.deleteProduct(product)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe({ this.view?.let { getFavoritesProducts(it) } }, { }))
+            .subscribe({
+                Toast.makeText(context?: requireContext(), "Producto eliminado de favoritos", Toast.LENGTH_SHORT).show()
+                getFavoritesProducts(localView)
+            }, { }))
     }
 
     override fun addProductToCar(product: Product) {

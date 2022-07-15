@@ -15,7 +15,6 @@ import com.example.proyectoandroid_yuritzy.main.Product
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.schedulers.Schedulers
-import kotlin.concurrent.thread
 
 class ProductDetailFragment : Fragment() {
 
@@ -49,6 +48,8 @@ class ProductDetailFragment : Fragment() {
     private fun setProductDetail(product: Product, view: View) {
         this.product = product
 
+        getFavoriteProductById(product, view)
+
         view.apply {
             findViewById<TextView>(R.id.themathic).text = getString(R.string.thematic, product.name)
             findViewById<RatingBar>(R.id.ratingBar).rating = product.rating?.toFloat()?: 0F
@@ -70,12 +71,27 @@ class ProductDetailFragment : Fragment() {
                         .subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribe({ Toast.makeText(context?: requireContext(), "Producto añadido a favoritos", Toast.LENGTH_SHORT).show() }, { }))
+                } else {
+                    compositeDisposable.add(productsDatabaseController.deleteProduct(product)
+                        .subscribeOn(Schedulers.io())
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribe({ Toast.makeText(context?: requireContext(), "Producto eliminado de favoritos", Toast.LENGTH_SHORT).show() }, { }))
                 }
             }
         }
     }
 
-    private fun getProductById(product: Product) {
+    private fun getFavoriteProductById(product: Product, view: View) {
+        compositeDisposable.add(productsDatabaseController.getProductById(product.id.toLong())
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({
+                isProductLiked = true
+                view.findViewById<ImageView>(R.id.iv_favourite).setColorFilter(ContextCompat.getColor(context?: requireContext(), R.color.orange), MULTIPLY)
+            }, {  }))
+    }
+
+    private fun getProductCheckoutById(product: Product) {
         compositeDisposable.add(checkoutDatabaseController.getProductById(product.id.toLong())
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
@@ -98,7 +114,7 @@ class ProductDetailFragment : Fragment() {
 
     private fun onClickAddToCar(view: View) {
         view.findViewById<Button>(R.id.button3)?.setOnClickListener {
-            getProductById(product)
+            getProductCheckoutById(product)
         }
     }
 

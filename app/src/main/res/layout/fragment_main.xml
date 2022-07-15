@@ -12,46 +12,13 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent=".50" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/layout_landing_page"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/mini_toolbar"
-        android:background="#FCEA7E"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/ic_location"
-            android:layout_width="@dimen/icons"
-            android:layout_height="@dimen/icons"
-            android:layout_marginStart="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_location"
-            app:tint="@color/black" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="@dimen/icons"
-            android:layout_marginStart="5dp"
-            android:fontFamily="@font/quicksandregular"
-            android:text="@string/address"
-            android:textColor="@color/black"
-            android:textSize="@dimen/font_size1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/ic_location"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
     <ImageView
         android:id="@+id/iv_perfect_gift"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toTopOf="@id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/layout_landing_page"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/perfect_gift_copy" />
 
     <TextView

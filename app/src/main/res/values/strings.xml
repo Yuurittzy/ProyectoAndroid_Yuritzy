@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">ProyectoAndroid_Yuritzy</string>
     <string name="yuu_ritzy">Yuu Ritzy</string>
-    <string name="address">¿Compras desde _ CP _?</string>
+    <string name="address">¿Compras desde %1$s CP %2$s?</string>
     <string name="perfect_gift">El regalo perfecto</string>
     <string name="surprise_box">Caja sorpresa</string>
     <string name="naruto">Naruto</string>

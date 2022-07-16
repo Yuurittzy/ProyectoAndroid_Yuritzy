@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">ProyectoAndroid_Yuritzy</string>
     <string name="yuu_ritzy">Yuu Ritzy</string>
-    <string name="address">¿Compras desde %1$s CP %2$s?</string>
+    <string name="address">¿Compras desde Ciudad de México... CP 5700?</string>
     <string name="perfect_gift">El regalo perfecto</string>
     <string name="surprise_box">Caja sorpresa</string>
     <string name="naruto">Naruto</string>
@@ -23,7 +23,7 @@
     <string name="shipping_time">LLega en 9 días hábiles por $50</string>
     <string name="add_car">Agregar al carrito</string>
     <string name="greeting">Hola, Juanito!</string>
-    <string name="my_addresses">Mis direcciones</string>
+    <string name="my_addresses">Mi dirección</string>
     <string name="my_comments">Mis comentarios</string>
     <string name="my_shopping">Mis compras</string>
     <string name="coupons">Cupones</string>
@@ -65,6 +65,16 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="title_activity_checkout">CheckoutActivity</string>
+
+    <string name="no_favorite_products">No hay productos favoritos</string>
+    <string name="street">Calle</string>
+    <string name="number">Número</string>
+    <string name="district">Colonia</string>
+    <string name="postal_code">Código Postal</string>
+    <string name="municipality">Delegación o Municipio</string>
+    <string name="state">Estado</string>
+    <string name="country">País</string>
+    <string name="change_address">Cambiar direccion</string>
 
 
 </resources>

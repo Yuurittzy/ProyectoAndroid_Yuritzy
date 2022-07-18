@@ -6,9 +6,9 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:padding="10dp"
+        android:layout_width="@dimen/space_empty"
+        android:layout_height="@dimen/space_empty"
+        android:layout_marginStart="@dimen/space_xlarge"
         android:src="@drawable/sakura"
         app:layout_constraintBottom_toTopOf="@+id/hguideline1"
         app:layout_constraintEnd_toStartOf="@+id/vguideline1"
@@ -20,7 +20,7 @@
         android:layout_width="@dimen/icons"
         android:layout_height="@dimen/icons"
         android:layout_marginTop="@dimen/margin"
-        android:layout_marginEnd="@dimen/margin"
+        android:layout_marginEnd="@dimen/space_xlarge"
         android:src="@drawable/ic_favourite_full"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -28,8 +28,10 @@
 
     <TextView
         android:id="@+id/tv_thematic"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/space_empty"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_large"
+        android:layout_marginEnd="@dimen/space_xlarge"
         android:fontFamily="@font/quicksandbold"
         android:text="@string/thematic"
         android:textColor="@color/black"
@@ -57,6 +59,7 @@
         style="@style/Widget.AppCompat.RatingBar.Small"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_large"
         android:numStars="5"
         android:progressTint="@color/purple_200"
         android:rating="4.5"
@@ -67,6 +70,7 @@
         android:id="@+id/tv_final_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_large"
         android:fontFamily="@font/quicksandmedium"
         android:text="@string/price_final"
         android:textColor="@color/black"
@@ -89,6 +93,8 @@
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_medium"
+        android:layout_marginEnd="@dimen/space_xlarge"
         android:backgroundTint="@color/pink"
         android:fontFamily="@font/quicksandmedium"
         android:gravity="center"
@@ -96,13 +102,12 @@
         android:textAllCaps="false"
         android:textSize="@dimen/font_size1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/vguideline1"
         app:layout_constraintTop_toBottomOf="@+id/tv_final_price" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/space_large"
         android:background="@color/orange"
         app:layout_constraintTop_toBottomOf="@+id/button3" />
 

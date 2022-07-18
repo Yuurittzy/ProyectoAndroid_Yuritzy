@@ -22,7 +22,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         setCurrentFragment(MainFragment())
         setUpBottomSheet()
-
     }
 
 
@@ -47,6 +46,5 @@ class MainActivity : AppCompatActivity() {
             commit()
         }
     }
-
 
 }

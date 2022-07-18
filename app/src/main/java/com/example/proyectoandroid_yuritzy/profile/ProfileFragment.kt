@@ -1,10 +1,13 @@
 package com.example.proyectoandroid_yuritzy.profile
 
+import android.content.ActivityNotFoundException
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.proyectoandroid_yuritzy.R
 import com.example.proyectoandroid_yuritzy.address.AddressFragment
@@ -34,7 +37,7 @@ class ProfileFragment : Fragment() {
         }
 
         view.findViewById<TextView>(R.id.textView_help).setOnClickListener {
-
+            help(view)
         }
 
         return view
@@ -44,6 +47,17 @@ class ProfileFragment : Fragment() {
         activity?.supportFragmentManager?.beginTransaction()?.apply {
             replace(R.id.fragment_main, fragment)
             commit()
+        }
+    }
+
+    private fun help(view: View) {
+        val intent = Intent(Intent.ACTION_SEND)
+        intent.type = "text/plain"
+        intent.putExtra(Intent.EXTRA_TEXT, "Hola, buen día. \n Necesito ayuda relacionada con la aplicacion Yuu Ritzy.")
+        try {
+            activity?.startActivity(intent)
+        } catch (ex: ActivityNotFoundException) {
+            Toast.makeText(activity, "Hubo un error enviando el mensaje.", Toast.LENGTH_SHORT).show()
         }
     }
 

@@ -3,7 +3,7 @@
     <dimen name="font_size0">11sp</dimen>
     <dimen name="font_size1">15sp</dimen>
     <dimen name="font_size2">16sp</dimen>
-    <dimen name="font_size3">20sp</dimen>
+    <dimen name="font_size3">28sp</dimen>
     <dimen name="font_size4">24sp</dimen>
     <dimen name="font_size5">28sp</dimen>
     <dimen name="font_size6">40sp</dimen>
@@ -13,4 +13,15 @@
     <dimen name="margin">15dp</dimen>
     <dimen name="space10">10dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="space_empty">0dp</dimen>
+    <dimen name="space_xempty">3dp</dimen>
+    <dimen name="space_medium">8dp</dimen>
+    <dimen name="space_xmedium">10dp</dimen>
+    <dimen name="space_large">16dp</dimen>
+    <dimen name="space_xlarge">22dp</dimen>
+    <dimen name="space_xxlarge">26dp</dimen>
+
+    <dimen name="space_seventy">70dp</dimen>
+
 </resources>

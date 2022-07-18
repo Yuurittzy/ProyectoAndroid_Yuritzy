@@ -11,7 +11,7 @@ import com.example.proyectoandroid_yuritzy.main.Product
 class CheckoutViewHolder(private val view: View, private val checkoutInterface: CheckoutInterface): RecyclerView.ViewHolder(view) {
 
     fun setItem(product: Product) {
-        view.findViewById<TextView>(R.id.tv_thematic_checkout).text = product.name
+        view.findViewById<TextView>(R.id.tv_thematic_checkout).text = view.context.getString(R.string.thematic, product.name)
         view.findViewById<ImageView>(R.id.imageView_product_checkout).setImageDrawable(ContextCompat.getDrawable(view.context, product.image?: 0))
         view.findViewById<TextView>(R.id.tv_final_price_checkout).text = view.context.getString(R.string.price_final, product.priceWithDiscount)
         view.findViewById<TextView>(R.id.tv_quantity).text = product.quantity.toString()

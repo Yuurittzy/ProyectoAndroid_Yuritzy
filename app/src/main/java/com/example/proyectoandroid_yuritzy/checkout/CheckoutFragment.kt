@@ -24,6 +24,9 @@ class CheckoutFragment : Fragment(), CheckoutInterface {
 
     private lateinit var checkoutDatabaseController: CheckoutDatabaseController
 
+    private val items = mutableListOf<Product>()
+    private var finalPrice = 0
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_checkout, container, false)
 
@@ -40,8 +43,10 @@ class CheckoutFragment : Fragment(), CheckoutInterface {
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
+                items.addAll(it)
+                finalPrice = it.sumOf { (it.priceWithDiscount?: 0) * (it.quantity?: 0) } + 50
                 view.findViewById<RecyclerView>(R.id.recyclerView_checkout)?.adapter = CheckoutAdapter(it, this)
-                view.findViewById<TextView>(R.id.texview_final_price)?.text = getString(R.string.price_final, it.sumOf { (it.priceWithDiscount?: 0) * (it.quantity?: 0) } + 50)
+                view.findViewById<TextView>(R.id.texview_final_price)?.text = getString(R.string.price_final, finalPrice)
                 view.findViewById<TextView>(R.id.button_checkout).isEnabled = it.isNotEmpty()
             }, { }))
     }
@@ -62,13 +67,17 @@ class CheckoutFragment : Fragment(), CheckoutInterface {
 
     private fun checkout(view: View) {
         view.findViewById<TextView>(R.id.button_checkout).setOnClickListener {
+            val products = "Hola, buen día, me gustaria comprar: \n"
+                .plus(items.fold("\n") { acc, product -> acc.plus("${product.quantity} ${if (product.quantity == 1) "Caja" else "Cajas"} de ${product.name} \n") })
+                .plus("\nCon un costo total de $$finalPrice, incluyendo envío.")
+
             val intent = Intent(Intent.ACTION_SEND)
             intent.type = "text/plain"
-            intent.putExtra(Intent.EXTRA_TEXT, "The text you wanted to share")
+            intent.putExtra(Intent.EXTRA_TEXT, products)
             try {
                 activity?.startActivity(intent)
             } catch (ex: ActivityNotFoundException) {
-                Toast.makeText(activity, "Whatsapp have not been installed.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity, "Hubo un error enviando tu solicitud de compra.", Toast.LENGTH_SHORT).show()
             }
         }
     }

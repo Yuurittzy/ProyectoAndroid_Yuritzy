@@ -1,5 +1,6 @@
 package com.example.proyectoandroid_yuritzy.product_detail
 
+import android.graphics.Paint
 import android.graphics.PorterDuff.Mode.MULTIPLY
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -54,7 +55,10 @@ class ProductDetailFragment : Fragment() {
             findViewById<TextView>(R.id.themathic).text = getString(R.string.thematic, product.name)
             findViewById<RatingBar>(R.id.ratingBar).rating = product.rating?.toFloat()?: 0F
             findViewById<ImageView>(R.id.iv_preview).setImageDrawable(product.previewImage?.let { ContextCompat.getDrawable(view.context, it) })
-            findViewById<TextView>(R.id.tv_initial_price).text = getString(R.string.price_initial, product.price)
+            findViewById<TextView>(R.id.tv_initial_price).apply {
+                text = getString(R.string.price_initial, product.price)
+                paintFlags = Paint.STRIKE_THRU_TEXT_FLAG;
+            }
             findViewById<TextView>(R.id.tv_final_price).text = getString(R.string.price_final, product.priceWithDiscount)
             findViewById<TextView>(R.id.tv_discount).text = "% ${getString(R.string.discount, product.discountPercent)}"
         }
@@ -125,6 +129,11 @@ class ProductDetailFragment : Fragment() {
                 this.visibility = View.GONE
             }
         }
+    }
+
+    override fun onDestroy() {
+        compositeDisposable.dispose()
+        super.onDestroy()
     }
 
 }

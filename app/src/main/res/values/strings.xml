@@ -14,7 +14,7 @@
     <string name="favourites">Favoritos</string>
     <string name="my_account">Mi cuenta</string>
     <string name="shopping_cart">Carrito</string>
-    <string name="thematic">Caja sorpresa con \n temática de %s</string>
+    <string name="thematic">Caja sorpresa con \ntemática de %s</string>
     <string name="num_reviews">(120)</string>
     <string name="price_initial"><s>$%d</s></string>
     <string name="price_final">$%d</string>

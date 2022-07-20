@@ -62,7 +62,7 @@
             android:ellipsize="end"
             android:fontFamily="@font/quicksandregular"
             android:maxLines="1"
-            android:text="@string/address"
+            android:text="@string/enter_your_addess"
             android:textColor="@color/black"
             android:textSize="@dimen/font_size1"
             app:layout_constraintBottom_toBottomOf="parent"

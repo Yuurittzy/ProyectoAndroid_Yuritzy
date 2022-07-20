@@ -21,7 +21,7 @@
             android:drawablePadding="16dp"
             android:fontFamily="@font/quicksandbold"
             android:gravity="center"
-            android:text="@string/data_shipping"
+            android:text="@string/change_address"
             android:textColor="@color/black"
             android:textSize="26sp"
             app:layout_constraintTop_toBottomOf="@id/imageView_profile" />
@@ -38,15 +38,15 @@
             android:textSize="18sp"
             app:layout_constraintTop_toBottomOf="@id/imageView_profile" />
 
-        <TextView
-            android:id="@+id/textView_street"
+        <EditText
+            android:id="@+id/editText_street"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="6dp"
             android:drawablePadding="16dp"
             android:fontFamily="@font/quicksandmedium"
-            android:text="@string/street"
+            android:hint="@string/street"
             android:textColor="@color/gray"
             android:textSize="14sp"
             app:layout_constraintTop_toBottomOf="@id/imageView_profile" />
@@ -63,15 +63,15 @@
             android:textSize="18sp"
             app:layout_constraintTop_toBottomOf="@id/imageView_profile" />
 
-        <TextView
-            android:id="@+id/textView_number"
+        <EditText
+            android:id="@+id/editText_number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="6dp"
             android:drawablePadding="16dp"
             android:fontFamily="@font/quicksandmedium"
-            android:text="@string/number"
+            android:hint="@string/number"
             android:textColor="@color/gray"
             android:textSize="14sp"
             app:layout_constraintTop_toBottomOf="@id/imageView_profile" />
@@ -88,15 +88,15 @@
             android:textSize="18sp"
             app:layout_constraintTop_toBottomOf="@id/imageView_profile" />
 
-        <TextView
-            android:id="@+id/textView_district"
+        <EditText
+            android:id="@+id/editText_district"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="6dp"
             android:drawablePadding="16dp"
             android:fontFamily="@font/quicksandmedium"
-            android:text="@string/district"
+            android:hint="@string/district"
             android:textColor="@color/gray"
             android:textSize="14sp"
             app:layout_constraintTop_toBottomOf="@id/imageView_profile" />
@@ -113,16 +113,15 @@
             android:textSize="18sp"
             app:layout_constraintTop_toBottomOf="@id/imageView_profile" />
 
-
-        <TextView
-            android:id="@+id/textView_postal_code"
+        <EditText
+            android:id="@+id/editText_postal_code"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="6dp"
             android:drawablePadding="16dp"
             android:fontFamily="@font/quicksandmedium"
-            android:text="@string/postal_code"
+            android:hint="@string/postal_code"
             android:textColor="@color/gray"
             android:textSize="14sp"
             app:layout_constraintTop_toBottomOf="@id/imageView_profile" />
@@ -139,15 +138,15 @@
             android:textSize="18sp"
             app:layout_constraintTop_toBottomOf="@id/imageView_profile" />
 
-        <TextView
-            android:id="@+id/textView_municipality"
+        <EditText
+            android:id="@+id/editText_municipality"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="6dp"
             android:drawablePadding="16dp"
             android:fontFamily="@font/quicksandmedium"
-            android:text="@string/municipality"
+            android:hint="@string/municipality"
             android:textColor="@color/gray"
             android:textSize="14sp"
             app:layout_constraintTop_toBottomOf="@id/imageView_profile" />
@@ -164,15 +163,15 @@
             android:textSize="18sp"
             app:layout_constraintTop_toBottomOf="@id/imageView_profile" />
 
-        <TextView
-            android:id="@+id/textView_state"
+        <EditText
+            android:id="@+id/editText_state"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="6dp"
             android:drawablePadding="16dp"
             android:fontFamily="@font/quicksandmedium"
-            android:text="@string/state"
+            android:hint="@string/state"
             android:textColor="@color/gray"
             android:textSize="14sp"
             app:layout_constraintTop_toBottomOf="@id/imageView_profile" />
@@ -189,30 +188,29 @@
             android:textSize="18sp"
             app:layout_constraintTop_toBottomOf="@id/imageView_profile" />
 
-        <TextView
-            android:id="@+id/textView_country"
+        <EditText
+            android:id="@+id/editText_country"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="6dp"
             android:drawablePadding="16dp"
             android:fontFamily="@font/quicksandmedium"
-            android:text="@string/country"
+            android:hint="@string/country"
             android:textColor="@color/gray"
             android:textSize="14sp"
             app:layout_constraintTop_toBottomOf="@id/imageView_profile" />
 
         <TextView
-            android:id="@+id/textView_change_address"
+            android:id="@+id/textView_edit_address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="30dp"
             android:drawablePadding="16dp"
             android:fontFamily="@font/quicksandbold"
             android:gravity="center"
-            android:padding="@dimen/space_large"
-            android:text="@string/change_address"
+            android:text="@string/edit"
             android:textColor="@color/purple_200"
             android:textSize="18sp"
             app:layout_constraintTop_toBottomOf="@id/imageView_profile" />

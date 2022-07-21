@@ -29,6 +29,7 @@
             </intent-filter>
         </activity>
         <activity
+            android:windowSoftInputMode="adjustNothing"
             android:name=".main.MainActivity"
             android:screenOrientation="locked" />
 

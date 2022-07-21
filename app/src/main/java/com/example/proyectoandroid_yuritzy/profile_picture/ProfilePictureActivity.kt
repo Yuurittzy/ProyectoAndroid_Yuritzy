@@ -15,11 +15,18 @@ import androidx.camera.view.PreviewView
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.example.proyectoandroid_yuritzy.R
+import com.example.proyectoandroid_yuritzy.database.ProfileDatabaseController
+import io.reactivex.rxjava3.disposables.CompositeDisposable
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
 
-class ProfilePictureActivity(private val profilePictureInterface: ProfilePictureInterface) : AppCompatActivity() {
+
+class ProfilePictureActivity : AppCompatActivity() {
+
+    private val compositeDisposable = CompositeDisposable()
+
+    private lateinit var profileDatabaseController: ProfileDatabaseController
 
     private lateinit var outPutDirectory: File
     private var imageCapture: ImageCapture? = null
@@ -27,6 +34,8 @@ class ProfilePictureActivity(private val profilePictureInterface: ProfilePicture
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_take_picture)
+
+        profileDatabaseController = ProfileDatabaseController(this)
 
         outPutDirectory = getOutputDirectory()
         requestPermissions()
@@ -77,9 +86,9 @@ class ProfilePictureActivity(private val profilePictureInterface: ProfilePicture
             object: ImageCapture.OnImageSavedCallback{
                 override fun onImageSaved(outputFileResults: ImageCapture.OutputFileResults) {
                     val savedUri = Uri.fromFile(photoFile)
+
                     val msg = "Foto guardada"
                     Log.i(Constants.TAG,"Foto: $msg,$savedUri")
-                    profilePictureInterface.addProfilePicture(savedUri)
                     finish()
                 }
 
@@ -131,6 +140,5 @@ class ProfilePictureActivity(private val profilePictureInterface: ProfilePicture
         Constants.REQUIRED_PERMISSIONS.all {
             ContextCompat.checkSelfPermission(baseContext,it) == PackageManager.PERMISSION_GRANTED
         }
-
 
 }

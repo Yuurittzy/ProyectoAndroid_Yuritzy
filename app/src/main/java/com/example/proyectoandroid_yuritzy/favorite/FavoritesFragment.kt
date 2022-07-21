@@ -55,11 +55,29 @@ class FavoritesFragment : Fragment(), FavoritesInterface {
             }, { }))
     }
 
-    override fun addProductToCar(product: Product) {
+    private fun getProductCheckoutById(product: Product) {
+        compositeDisposable.add(checkoutDatabaseController.getProductById(product.id.toLong())
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({ updateProduct(it.copy(quantity = (it.quantity?: 0) + 1)) }, { addProduct(product) }))
+    }
+
+    private fun updateProduct(product: Product) {
+        compositeDisposable.add(checkoutDatabaseController.updateProduct(product)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({ Toast.makeText(context?: requireContext(), "Cantidad de producto actualizada", Toast.LENGTH_SHORT).show() }, { }))
+    }
+
+    private fun addProduct(product: Product) {
         compositeDisposable.add(checkoutDatabaseController.addProduct(product)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({ Toast.makeText(context?: requireContext(), "Producto añadido al carrito", Toast.LENGTH_SHORT).show() }, { }))
+    }
+
+    override fun addProductToCar(product: Product) {
+        getProductCheckoutById(product)
     }
 
 }

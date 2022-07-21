@@ -70,16 +70,14 @@ class EditAddressFragment: Fragment() {
             .subscribe({
                 Toast.makeText(context?: requireContext(), "Dirección guardada exitósamente.", Toast.LENGTH_SHORT).show()
                 activity?.findViewById<TextView>(R.id.textView_location)?.text = "¿Compras desde $street $number CP $postalCode?"
-                       }, {
-                Toast.makeText(context?: requireContext(), it.toString(), Toast.LENGTH_SHORT).show()
-            }))
+                       }, { }))
     }
-
 
     private fun closeDetail() {
         activity?.findViewById<ImageView>(R.id.iv_back)?.apply {
             setOnClickListener {
                 activity?.supportFragmentManager?.beginTransaction()?.remove(this@EditAddressFragment)?.commit()
+                visibility = View.GONE
             }
         }
     }

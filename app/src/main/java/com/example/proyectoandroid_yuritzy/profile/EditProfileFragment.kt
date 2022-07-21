@@ -33,7 +33,7 @@ class EditProfileFragment: Fragment(), ProfilePictureInterface {
 
         activity?.findViewById<ImageView>(R.id.iv_back)?.visibility = View.VISIBLE
 
-        view.findViewById<TextView>(R.id.textView_take_picture).setOnClickListener { startActivity(Intent(activity, ProfilePictureActivity(this)::class.java)) }
+        view.findViewById<TextView>(R.id.textView_take_picture).setOnClickListener { startActivity(Intent(activity, ProfilePictureActivity::class.java)) }
 
         view.findViewById<TextView>(R.id.textView_edit_profile).setOnClickListener { editProfile(view) }
 
